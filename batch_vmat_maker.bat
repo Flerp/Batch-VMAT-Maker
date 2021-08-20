@@ -1,3 +1,4 @@
+::For loop that echoes the default vmat text into a file
 @echo off
 FOR /r %%G in (*.png,*.tif,*.psd,*.tga) do (
 echo // THIS FILE IS AUTO-GENERATED >> "%%~nG.vmat"
