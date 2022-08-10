@@ -1,22 +1,35 @@
 # Batch-VMAT-Maker
  
-This is a bulk VMAT Maker
-It creates materials using the complex shader, by default
+\This is a bulk VMAT Maker
+As with any scripts grabbed from the internet, make sure to backup your texture files before running this, in the event anything goes wrong\
 
 
-## Instructions
-1. Place texture files in /sbox/addons/addonname/materials/basetexturefiles/
-2. Place script next to texture files (tif, tga, png, psd)
-3. Run Script
+Listed below are the menu options
 
-vmats will be placed in /sbox/addons/addonname/materials/
-
-Feel free to tweak as you see fit
+### Basic Instructions
+Place this script file into your materials/basetexturefiles/ folder alongside your texture files\
+Run the script\
+The options are outlined below
 
 
+## 1. CREATE BASIC VMAT FILES
+This will create a VMAT file for every image file in the basetexturefiles folder\
+It create a vmat with the complex shader and uses the image file(s) for the "color" option
 
-## PBR Version
-This works the same as the standard one, but with all PBR aspects.
-It expects the following:
-1. All image files are the same format
-2. file suffixes match S&box's best practices (_color, _metal, _ao, etc)
+
+## 2. CREATE PBR VMAT FILES
+This will create VMAT files with color, metalness, normal, and metalness\
+This option expects all texture files to be the same file format\
+This option also expects the files to be named per the specifications of sbox (texturename_color, texturename_metal, texturename_normal, texturename_rough)
+
+## 3. CLEANUP UNCOMPILED VMAT FILES 
+This option scans your vmat files and checks for vmat_c files\
+If it doesn't find a vmat_c file corresponding with the vmat file it will remove the vmat file\
+This option is mainly for cleaning up any unused materials from the final folder
+
+## 4. CLOSE BATCH VMAT MAKER
+Closes the script
+
+
+# Error Handling
+This script has some basic error handling that *should* prevent it from running wild and going through multiple operations at once.

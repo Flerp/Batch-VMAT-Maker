@@ -150,6 +150,7 @@ goto menu
 goto error
 
 :error
+cls
 echo ================================================================================================
 echo =          Script broke, press any key to return to menu and check your texture files          =
 echo ================================================================================================
