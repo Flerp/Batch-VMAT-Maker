@@ -1,7 +1,7 @@
 # Batch-VMAT-Maker
  
-\This is a bulk VMAT Maker
-As with any scripts grabbed from the internet, make sure to backup your texture files before running this, in the event anything goes wrong\
+This is a bulk VMAT Maker\
+As with any scripts grabbed from the internet, make sure to backup your texture files before running this, in the event anything goes wrong
 
 
 Listed below are the menu options
