@@ -1,10 +1,19 @@
 # Batch-VMAT-Maker
- 
 This is a bulk VMAT Maker\
 As with any scripts grabbed from the internet, make sure to backup your texture files before running this, in the event anything goes wrong
 
+## Powershell Script Version 
+Place the powershell script in your materials/foldername/ folder, alongside your texture files\
+The texture files must be named with sbox's preferred suffixes (_color, _rough, _selfillum, _metal, _trans)\
+The powershell script will search for texture files with the _color suffix\
+Once it finds something with that suffix it scans for other texture files with the same name, but with the additional suffixes\
+The vmat output will include all extra maps that are found
 
-Listed below are the menu options
+
+tl;dr: If the script finds texture_brick_color.png it will search for the _rough, _selfillum, _metal , and _trans suffixed texture files\
+if it finds them it will add them to the vmat in the appropriate place with default settings
+
+## Batch File Version (old and not maintained/updated)
 
 ### Basic Instructions
 Place this script file into your materials/basetexturefiles/ folder alongside your texture files\
