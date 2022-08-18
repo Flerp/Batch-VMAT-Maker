@@ -1,4 +1,5 @@
 ##Test Variables
+$texturedir = Split-Path -Path (Get-Location) -Leaf
 $force_backfaces = 1
 $force_specular = 0
 Get-Childitem *_color.png,*_color.jpg,*_color.tif,*_color.tga,*_color.psd |
@@ -58,14 +59,14 @@ ForEach-Object {
 		(Write-Output "`tTextureAmbientOcclusion `"materials/default/default_ao.tga`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	elseif ($has_ao -eq 1) {
-		(Write-Output "`tTextureAmbientOcclusion `"materials/basetexturefiles/$($matname)_ao$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
+		(Write-Output "`tTextureAmbientOcclusion `"materials/$($texturedir)/$($matname)_ao$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	Write-Output "" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 #Color Map Settings##########################################################################################################################################################
 	Write-Output "`t//---- Color ----" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 	Write-Output "`tg_flModelTintAmount `"1.000`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 	Write-Output "`tg_vColorTint `"[1.000000 1.000000 1.000000 0.000000]`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
-	Write-Output "`tTextureColor `"materials/basetexturefiles/$($matname)_color$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
+	Write-Output "`tTextureColor `"materials/$($texturedir)/$($matname)_color$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 	Write-Output "" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 #Fade SEttings###############################################################################################################################################################
 	Write-Output "`t//---- Fade ----" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
@@ -86,7 +87,7 @@ ForEach-Object {
 		(Write-Output "`tg_flMetalness `"0.000`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	elseif ($has_metal -eq 1) {
-		(Write-Output "`tTextureMetalness `"materials/basetexturefiles/$($matname)_metal$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
+		(Write-Output "`tTextureMetalness `"materials/$($texturedir)/$($matname)_metal$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	Write-Output "" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 #Normal Settings#############################################################################################################################################################
@@ -95,7 +96,7 @@ ForEach-Object {
 		(Write-Output "`tTextureNormal `"materials/default/default_normal.tga`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	elseif ($has_normal -eq 1) {
-		(Write-Output "`tTextureNormal `"materials/basetexturefiles/$($matname)_normal$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
+		(Write-Output "`tTextureNormal `"materials/$($texturedir)/$($matname)_normal$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	Write-Output "" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 #Roughness Settings##########################################################################################################################################################
@@ -104,7 +105,7 @@ ForEach-Object {
 		(Write-Output "`tTextureNormal `"materials/default/default_rough.tga`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	elseif ($has_rough -eq 1) {
-		(Write-Output "`tTextureRoughness `"materials/basetexturefiles/$($matname)_rough$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
+		(Write-Output "`tTextureRoughness `"materials/$($texturedir)/$($matname)_rough$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 	Write-Output "" | Out-File -encoding ASCII -FilePath $mat_output_file -Append
 #Self Illumination Settings##################################################################################################################################################
@@ -130,7 +131,7 @@ IF ($has_selfillum -eq 1) {
 	IF ($has_trans -eq 1) {
 		(Write-Output "`t//---- Translucent ----" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 		(Write-Output "`tg_flOpacityScale `"1.000`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
-		(Write-Output "`tTextureTranslucency `"materials/basetexturefiles/$($matname)_trans$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
+		(Write-Output "`tTextureTranslucency `"materials/$($texturedir)/$($matname)_trans$($mat_fileextension)`"" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 		(Write-Output "" | Out-File -encoding ASCII -FilePath $mat_output_file -Append)
 	}
 #End of VMAT#################################################################################################################################################################
